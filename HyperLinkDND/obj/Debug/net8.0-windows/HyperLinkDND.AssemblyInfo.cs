@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HyperLinkDND")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57242184ec49186d6a04ff4b1bde18d31750bf4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4941917233924c3b9584aaf9a2c8a3335af0df2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HyperLinkDND")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HyperLinkDND")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

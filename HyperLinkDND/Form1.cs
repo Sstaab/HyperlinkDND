@@ -19,6 +19,10 @@ namespace HyperLinkDND
         private System.Windows.Forms.LinkLabel Sorcerer2024;
         private System.Windows.Forms.LinkLabel Warlock2024;
         private System.Windows.Forms.LinkLabel Wizard2024;
+        private System.Windows.Forms.LinkLabel Spell2024;
+        private System.Windows.Forms.LinkLabel Feat2024;
+        private System.Windows.Forms.LinkLabel Race2024;
+        private System.Windows.Forms.LinkLabel Back2024;
 
         private System.Windows.Forms.LinkLabel Artificer;
         private System.Windows.Forms.LinkLabel barbarian;
@@ -33,7 +37,10 @@ namespace HyperLinkDND
         private System.Windows.Forms.LinkLabel Sorcerer;
         private System.Windows.Forms.LinkLabel Warlock;
         private System.Windows.Forms.LinkLabel Wizard;
-
+        private System.Windows.Forms.LinkLabel Spell;
+        private System.Windows.Forms.LinkLabel Feat;
+        private System.Windows.Forms.LinkLabel Race;
+        private System.Windows.Forms.LinkLabel Back;
 
 
         private System.Windows.Forms.TabControl DNDTabs;
@@ -256,10 +263,65 @@ namespace HyperLinkDND
             // Add an event handler to do something when the links are clicked.
             this.Wizard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel13_LinkClicked);
 
+
+
             // Set the text for the LinkLabel.
             this.Wizard.Text = "Wizard";
 
-            return new System.Windows.Forms.Control[] { this.Artificer, this.barbarian, this.Bard, this.Cleric, this.Druid, this.Fighter, this.Monk, this.Paladin, this.Ranger, this.Rogue, this.Sorcerer, this.Warlock, this.Wizard };
+            this.Spell = new System.Windows.Forms.LinkLabel();
+            this.Spell.Location = new System.Drawing.Point(134, 50);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Spell.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Spell.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSpell_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Spell.Text = "Spell";
+
+            this.Feat = new System.Windows.Forms.LinkLabel();
+            this.Feat.Location = new System.Drawing.Point(134, 75);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Feat.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Feat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFeat_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Feat.Text = "Feat";
+
+            this.Race = new System.Windows.Forms.LinkLabel();
+            this.Race.Location = new System.Drawing.Point(134, 100);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Race.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Race.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRace_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Race.Text = "Race";
+
+            this.Back = new System.Windows.Forms.LinkLabel();
+            this.Back.Location = new System.Drawing.Point(134, 125);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Back.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Back.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBackGround_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Back.Text = "Background";
+
+            return new System.Windows.Forms.Control[] { this.Artificer, this.barbarian, this.Bard, this.Cleric, this.Druid, this.Fighter, this.Monk, 
+                this.Paladin, this.Ranger, this.Rogue, this.Sorcerer, this.Warlock, this.Wizard, this.Spell, this.Feat, this.Race, this.Back};
 
         }
 
@@ -451,7 +513,60 @@ namespace HyperLinkDND
             // Set the text for the LinkLabel.
             this.Wizard2024.Text = "Wizard";
 
-            return new System.Windows.Forms.Control[] { this.Artificer2024, this.barbarian2024, this.Bard2024, this.Cleric2024, this.Druid2024, this.Fighter2024, this.Monk2024, this.Paladin2024, this.Ranger2024, this.Rogue2024, this.Sorcerer2024, this.Warlock2024, this.Wizard2024 };
+            this.Spell2024 = new System.Windows.Forms.LinkLabel();
+            this.Spell2024.Location = new System.Drawing.Point(134, 50);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Spell2024.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Spell2024.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSpell_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Spell2024.Text = "Spell";
+
+            this.Feat2024 = new System.Windows.Forms.LinkLabel();
+            this.Feat2024.Location = new System.Drawing.Point(134, 75);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Feat2024.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Feat2024.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFeat_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Feat2024.Text = "Feat";
+
+            this.Race2024 = new System.Windows.Forms.LinkLabel();
+            this.Race2024.Location = new System.Drawing.Point(134, 100);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Race2024.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Race2024.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRace_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Race2024.Text = "Race";
+
+            this.Back2024 = new System.Windows.Forms.LinkLabel();
+            this.Back2024.Location = new System.Drawing.Point(134, 125);
+
+
+            // Specify that the size should be automatically determined by the content.
+            this.Back2024.AutoSize = true;
+
+            // Add an event handler to do something when the links are clicked.
+            this.Back2024.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBackGround_LinkClicked);
+
+            // Set the text for the LinkLabel.
+            this.Back2024.Text = "Background";
+
+            return new System.Windows.Forms.Control[] { this.Artificer2024, this.barbarian2024, this.Bard2024, this.Cleric2024, this.Druid2024, this.Fighter2024, this.Monk2024, this.Paladin2024, this.Ranger2024, 
+                this.Rogue2024, this.Sorcerer2024, this.Warlock2024, this.Wizard2024, this.Spell2024, this.Feat2024, this.Race2024, this.Back2024};
 
         }
 
@@ -725,5 +840,94 @@ namespace HyperLinkDND
                 });
             }
         }
+
+        private void linkLabelSpell_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (DNDTabs.SelectedTab == DND2024)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+
+                    FileName = "https://dnd2024.wikidot.com/spell:all",
+                    UseShellExecute = true
+                });
+            }
+            else if (DNDTabs.SelectedTab == DND2014)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://dnd5e.wikidot.com/spells",
+                    UseShellExecute = true
+                });
+            }
+        }
+
+        private void linkLabelFeat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (DNDTabs.SelectedTab == DND2024)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+
+                    FileName = "https://dnd2024.wikidot.com/feat:all",
+                    UseShellExecute = true
+                });
+            }
+            else if (DNDTabs.SelectedTab == DND2014)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://dnd5e.wikidot.com/#toc70",
+                    UseShellExecute = true
+                });
+            }
+        }
+
+        private void linkLabelRace_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (DNDTabs.SelectedTab == DND2024)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+
+                    FileName = "https://dnd2024.wikidot.com/species:all",
+                    UseShellExecute = true
+                });
+            }
+            else if (DNDTabs.SelectedTab == DND2014)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://dnd5e.wikidot.com/#toc2",
+                    UseShellExecute = true
+                });
+            }
+        }
+
+        private void linkLabelBackGround_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (DNDTabs.SelectedTab == DND2024)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+
+                    FileName = "https://dnd2024.wikidot.com/background:all",
+                    UseShellExecute = true
+                });
+            }
+            else if (DNDTabs.SelectedTab == DND2014)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://dnd5e.wikidot.com/#toc3",
+                    UseShellExecute = true
+                });
+            }
+        }
+
     }
 }
