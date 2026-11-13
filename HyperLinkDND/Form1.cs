@@ -5,7 +5,7 @@ namespace HyperLinkDND
     public partial class Form1 : Form
     {
 
-       
+
         private System.Windows.Forms.LinkLabel Artificer2024;
         private System.Windows.Forms.LinkLabel barbarian2024;
         private System.Windows.Forms.LinkLabel Bard2024;
@@ -46,6 +46,10 @@ namespace HyperLinkDND
         private System.Windows.Forms.TabControl DNDTabs;
         private System.Windows.Forms.TabPage DND2024;
         private System.Windows.Forms.TabPage DND2014;
+        private System.Windows.Forms.TextBox Search2024;
+        private System.Windows.Forms.Button SearchBtn2024;
+        private System.Windows.Forms.TextBox Search;
+        private System.Windows.Forms.Button SearchBtn;
 
         public Form1()
         {
@@ -53,11 +57,12 @@ namespace HyperLinkDND
 
             this.Tag = "Dungeons and Dragons 5.5e";
 
+            //sets tab controls to swap between 2024 and 2014
             DNDTabs = new System.Windows.Forms.TabControl();
             DNDTabs.Location = new System.Drawing.Point(0, 0);
             DNDTabs.Size = new System.Drawing.Size(750, 500);
 
-            
+
             this.DND2024 = new System.Windows.Forms.TabPage();
             this.DND2024.TabIndex = 0;
             this.DND2024.Text = "2024";
@@ -68,18 +73,24 @@ namespace HyperLinkDND
 
 
 
-         
+
 
             this.DND2024.Controls.AddRange(Classes2024());
             this.DND2014.Controls.AddRange(Classes2014());
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.DNDTabs.Controls.AddRange(new System.Windows.Forms.Control[] {DND2024, DND2014});
+            this.DNDTabs.Controls.AddRange(new System.Windows.Forms.Control[] { DND2024, DND2014 });
             //this.Controls.AddRange(new System.Windows.Forms.Control[] {DNDTabs, this.Artificer, this.barbarian, this.Bard, this.Cleric, this.Druid, this.Fighter, this.Monk, this.Paladin, this.Ranger, this.Rogue, this.Sorcerer, this.Warlock, this.Wizard });
-            this.Controls.AddRange(new System.Windows.Forms.Control[] {DNDTabs});
+            this.Controls.AddRange(new System.Windows.Forms.Control[] { DNDTabs });
         }
 
         private System.Windows.Forms.Control[] Classes2014()
         {
+
+            //sets the text area and button for the search bar
+            Search = new System.Windows.Forms.TextBox();
+            Search.Location = new System.Drawing.Point(500, 50);
+            SearchBtn = new System.Windows.Forms.Button();
+            SearchBtn.Location = new System.Drawing.Point(500, 75);
 
             /*Artificer class*/
             this.Artificer = new System.Windows.Forms.LinkLabel();
@@ -320,8 +331,11 @@ namespace HyperLinkDND
             // Set the text for the LinkLabel.
             this.Back.Text = "Background";
 
-            return new System.Windows.Forms.Control[] { this.Artificer, this.barbarian, this.Bard, this.Cleric, this.Druid, this.Fighter, this.Monk, 
-                this.Paladin, this.Ranger, this.Rogue, this.Sorcerer, this.Warlock, this.Wizard, this.Spell, this.Feat, this.Race, this.Back};
+
+            
+
+            return new System.Windows.Forms.Control[] { this.Artificer, this.barbarian, this.Bard, this.Cleric, this.Druid, this.Fighter, this.Monk,
+                this.Paladin, this.Ranger, this.Rogue, this.Sorcerer, this.Warlock, this.Wizard, this.Spell, this.Feat, this.Race, this.Back, this.Search, this.SearchBtn};
 
         }
 
@@ -565,7 +579,7 @@ namespace HyperLinkDND
             // Set the text for the LinkLabel.
             this.Back2024.Text = "Background";
 
-            return new System.Windows.Forms.Control[] { this.Artificer2024, this.barbarian2024, this.Bard2024, this.Cleric2024, this.Druid2024, this.Fighter2024, this.Monk2024, this.Paladin2024, this.Ranger2024, 
+            return new System.Windows.Forms.Control[] { this.Artificer2024, this.barbarian2024, this.Bard2024, this.Cleric2024, this.Druid2024, this.Fighter2024, this.Monk2024, this.Paladin2024, this.Ranger2024,
                 this.Rogue2024, this.Sorcerer2024, this.Warlock2024, this.Wizard2024, this.Spell2024, this.Feat2024, this.Race2024, this.Back2024};
 
         }
@@ -573,7 +587,7 @@ namespace HyperLinkDND
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-        
+
             if (DNDTabs.SelectedTab == DND2024)
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
@@ -587,7 +601,7 @@ namespace HyperLinkDND
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
-                    FileName = "https://dnd5e.wikidot.com/barbarian", 
+                    FileName = "https://dnd5e.wikidot.com/barbarian",
                     UseShellExecute = true
                 });
             }
@@ -929,5 +943,38 @@ namespace HyperLinkDND
             }
         }
 
+
+        private void Search_Funtion(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (DNDTabs.SelectedTab == DND2024)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+
+                    FileName = "https://dnd2024.wikidot.com/background:all",
+                    UseShellExecute = true
+                });
+            }
+            else if (DNDTabs.SelectedTab == DND2014)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://dnd5e.wikidot.com/#toc3",
+                    UseShellExecute = true
+                });
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+           // this.SearchBtn.PerformClick();
+            MessageBox.Show("button was clicked ");
+        }
     }
 }
