@@ -998,7 +998,6 @@ namespace HyperLinkDND
                 {
                     Char templetter = searchTerm[i];
                     templetter = ((char)((int)templetter + 32));
-                    MessageBox.Show(templetter.ToString());
                     
                     searchTerm.Insert(i, templetter.ToString());
 
@@ -1037,8 +1036,6 @@ namespace HyperLinkDND
                 {
                     Char templetter = searchTerm[i];
                     templetter = ((char)((int)templetter + 32));
-                    MessageBox.Show(templetter.ToString());
-
                     searchTerm.Insert(i, templetter.ToString());
 
                 }
