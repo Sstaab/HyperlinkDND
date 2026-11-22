@@ -1,3 +1,4 @@
+using System.CodeDom.Compiler;
 using System.Diagnostics;
 
 namespace HyperLinkDND
@@ -90,6 +91,7 @@ namespace HyperLinkDND
             Search = new System.Windows.Forms.TextBox();
             Search.Location = new System.Drawing.Point(500, 50);
             SearchBtn = new System.Windows.Forms.Button();
+            SearchBtn.Text = "Search";
             SearchBtn.Location = new System.Drawing.Point(500, 75);
 
             /*Artificer class*/
@@ -331,8 +333,9 @@ namespace HyperLinkDND
             // Set the text for the LinkLabel.
             this.Back.Text = "Background";
 
+            SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
 
-            
+
 
             return new System.Windows.Forms.Control[] { this.Artificer, this.barbarian, this.Bard, this.Cleric, this.Druid, this.Fighter, this.Monk,
                 this.Paladin, this.Ranger, this.Rogue, this.Sorcerer, this.Warlock, this.Wizard, this.Spell, this.Feat, this.Race, this.Back, this.Search, this.SearchBtn};
@@ -341,6 +344,12 @@ namespace HyperLinkDND
 
         private System.Windows.Forms.Control[] Classes2024()
         {
+            //sets the text area and button for the search bar
+            Search2024 = new System.Windows.Forms.TextBox();
+            Search2024.Location = new System.Drawing.Point(500, 50);
+            SearchBtn2024 = new System.Windows.Forms.Button();
+            SearchBtn2024.Text = "Search";
+            SearchBtn2024.Location = new System.Drawing.Point(500, 75);
 
             /*Artificer class*/
             this.Artificer2024 = new System.Windows.Forms.LinkLabel();
@@ -579,8 +588,11 @@ namespace HyperLinkDND
             // Set the text for the LinkLabel.
             this.Back2024.Text = "Background";
 
+            //sets the event handler for the search button
+            SearchBtn2024.Click += new System.EventHandler(this.SearchBtn2024_Click);
+
             return new System.Windows.Forms.Control[] { this.Artificer2024, this.barbarian2024, this.Bard2024, this.Cleric2024, this.Druid2024, this.Fighter2024, this.Monk2024, this.Paladin2024, this.Ranger2024,
-                this.Rogue2024, this.Sorcerer2024, this.Warlock2024, this.Wizard2024, this.Spell2024, this.Feat2024, this.Race2024, this.Back2024};
+                this.Rogue2024, this.Sorcerer2024, this.Warlock2024, this.Wizard2024, this.Spell2024, this.Feat2024, this.Race2024, this.Back2024, this.Search2024, this.SearchBtn2024};
 
         }
 
@@ -966,15 +978,82 @@ namespace HyperLinkDND
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-           // this.SearchBtn.PerformClick();
-            MessageBox.Show("button was clicked ");
+            
+            string searchTerm = Search.Text;
+
+            for (int i = 0; i < searchTerm.Length; i++)
+            {
+                if (searchTerm[i] == ' ')
+                {
+                    searchTerm = searchTerm.Remove(i, 1);
+                    searchTerm = searchTerm.Insert(i, "-");
+                }
+                else if (searchTerm[i] == '\'')
+                {
+                    searchTerm = searchTerm.Remove(i, 1);
+                }
+                else if ((int)searchTerm[i] <= 90)
+                {
+                    Char templetter = searchTerm[i];
+                    templetter = ((char)((int)templetter + 32));
+                    MessageBox.Show(templetter.ToString());
+                    
+                    searchTerm.Insert(i, templetter.ToString());
+
+                }
+            }
+
+                if (DNDTabs.SelectedTab == DND2014 && searchTerm.Length > 0)
+            {
+
+                string url = "https://dnd5e.wikidot.com/spell:" + searchTerm;
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            } 
+        }
+
+        private void SearchBtn2024_Click(object sender, EventArgs e)
+        {
+
+            string searchTerm = Search2024.Text;
+
+            for (int i = 0; i < searchTerm.Length; i++)
+            {
+                if (searchTerm[i] == ' ')
+                {
+                    searchTerm = searchTerm.Remove(i, 1);
+                    searchTerm = searchTerm.Insert(i, "-");
+                }
+                else if (searchTerm[i] == '\'')
+                {
+                    searchTerm = searchTerm.Remove(i, 1);
+                }
+                else if ((int)searchTerm[i] <= 90)
+                {
+                    Char templetter = searchTerm[i];
+                    templetter = ((char)((int)templetter + 32));
+                    MessageBox.Show(templetter.ToString());
+
+                    searchTerm.Insert(i, templetter.ToString());
+
+                }
+            }
+
+            if (DNDTabs.SelectedTab == DND2024 && searchTerm.Length > 0)
+            {
+
+                string url = "https://dnd2024.wikidot.com/spell:" + searchTerm;
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
         }
     }
 }
